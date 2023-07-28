@@ -1,4 +1,5 @@
 import React from "react";
+import bgImage from "../assets/bgImage.jpeg";
 
 function Hero() {
   return (
@@ -14,7 +15,7 @@ function Hero() {
         </div>
         <img
           className="w-full max-h-[500px] object-cover"
-          src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&aut"
+          src={bgImage}
           alt="hero_bg"
         />
       </div>
