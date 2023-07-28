@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { data } from "../data";
 
 function Food() {
+  const [foods, setFoods] = useState(data);
   console.log(data);
   return (
     <div className="max-w-[1640px] m-auto px-4 py-12">
@@ -13,7 +14,7 @@ function Food() {
         {/* filter type */}
         <div>
           <p className="font-bold text-gray-700">Filter Type </p>
-          <div className="flex justify-between wrap">
+          <div className="flex justify-between wrap w-full ">
             <button className="m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white">
               All
             </button>
@@ -25,9 +26,6 @@ function Food() {
             </button>
             <button className="m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white">
               Salad
-            </button>
-            <button className="m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white">
-              Chicken
             </button>
           </div>
         </div>
@@ -53,7 +51,28 @@ function Food() {
       </div>
 
       {/* Map through the Data! */}
-      <div></div>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 py pt-4 ">
+        {foods.map((item, index) => (
+          <div
+            key={index}
+            className="border shadow-lg rounded-lg hover:scale-105 duration-300"
+          >
+            <img
+              src={item.image}
+              alt={item.name}
+              className="w-full h-[200px] object-cover rounded-t-lg "
+            />
+            <div className="flex justify-between px-2 py-4">
+              <p className="font-bold">{item.name}</p>
+              <p>
+                <span className="bg-orange-500 text-white p-1 rounded-full">
+                  {item.price}
+                </span>
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
