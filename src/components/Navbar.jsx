@@ -45,7 +45,10 @@ function Navbar() {
 
       {/* Mobile */}
       {nav && (
-        <div className="bg-black/80 fixed w-screen h-screen z-10 top-0  left-0"></div>
+        <div
+          className="bg-black/80 fixed w-screen h-screen z-10 top-0  left-0 "
+          onClick={() => setNav(!nav)}
+        ></div>
       )}
 
       {/* Side Menu */}
@@ -68,31 +71,31 @@ function Navbar() {
 
         <nav>
           <ul className="flex flex-col p-4  text-gray-800">
-            <li className="text-xl py-4 flex ">
+            <li className="text-xl py-4 flex cursor-pointer">
               <TbTruckDelivery size={25} className="mr-4" /> Orders
             </li>
 
-            <li className="text-xl py-4 flex ">
+            <li className="text-xl py-4 flex cursor-pointer">
               <AiFillHeart size={25} className="mr-4" /> Favorites
             </li>
 
-            <li className="text-xl py-4 flex ">
+            <li className="text-xl py-4 flex cursor-pointer">
               <LiaWalletSolid size={25} className="mr-4" /> Wallet
             </li>
 
-            <li className="text-xl py-4 flex ">
+            <li className="text-xl py-4 flex cursor-pointer">
               <BiSolidHelpCircle size={25} className="mr-4" /> Help
             </li>
 
-            <li className="text-xl py-4 flex ">
+            <li className="text-xl py-4 flex cursor-pointer">
               <FaGift size={25} className="mr-4" /> Promotions
             </li>
 
-            <li className="text-xl py-4 flex ">
+            <li className="text-xl py-4 flex cursor-pointer">
               <FaStar size={25} className="mr-4" /> Best One
             </li>
 
-            <li className="text-xl py-4 flex ">
+            <li className="text-xl py-4 flex cursor-pointer">
               <FaUserFriends size={25} className="mr-4" /> Invite Friends
             </li>
           </ul>
